@@ -44,7 +44,7 @@ h3 {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1110px;
   margin: 0 auto;
   padding: 4rem 0;
 }
@@ -219,6 +219,77 @@ h3 {
 
       &.negative {
         color: v.$text-negative-color;
+      }
+    }
+  }
+}
+
+// metrics
+.metrics {
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .metric-card {
+    background-color: v.$card-bg-color;
+    border-radius: v.$border-radius;
+    padding: 2rem;
+    cursor: pointer;
+    transition: v.$transition-duration;
+
+    &:hover {
+      filter: brightness(120%);
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      margin-bottom: 1.4rem;
+    }
+
+    &__metric {
+      font-size: 1rem;
+      color: v.$text-muted-color;
+    }
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+
+    &__value {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+
+    .variation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__arrow {
+        margin-right: 0.4rem;
+      }
+
+      &__value {
+        font-weight: bold;
+        font-size: 0.9rem;
+
+        &.positive {
+          color: v.$text-positive-color;
+        }
+
+        &.negative {
+          color: v.$text-negative-color;
+        }
       }
     }
   }

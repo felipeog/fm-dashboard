@@ -14,4 +14,4 @@ mixin metricCard(metric, provider, value, variation, isPositive)
         else
           img.variation__arrow(src="./img/icon-down.svg" alt="Negative variation")
 
-        p.variation__value #{variation}%
+        p.variation__value(class=isPositive ? "positive" : "negative") #{variation}%
