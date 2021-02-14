@@ -1,4 +1,5 @@
 @use './variables' as v;
+@use './mixins' as m;
 
 *,
 *::before,
@@ -24,10 +25,8 @@ body {
 }
 
 body::before {
-  content: '';
-  position: absolute;
+  @include m.pseudo-element();
   top: 0;
-  display: block;
   width: 100%;
   height: 14rem;
   background-color: v.$bg-top-color;
@@ -79,6 +78,7 @@ h3 {
     font-weight: bold;
     color: v.$text-muted-color;
     transition: v.$transition-duration;
+    text-transform: capitalize;
   }
 
   &__button {
@@ -92,9 +92,7 @@ h3 {
     transition: v.$transition-duration;
 
     &::before {
-      content: '';
-      display: block;
-      position: absolute;
+      @include m.pseudo-element();
       top: 0.2rem;
       left: 0.2rem;
       width: 1.4rem;
@@ -116,6 +114,106 @@ h3 {
 
     .toggle__button {
       filter: brightness(120%);
+    }
+  }
+}
+
+// accounts
+.accounts {
+  margin-bottom: 4rem;
+
+  &__title {
+    display: none;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+.account-card {
+  text-align: center;
+  background-color: v.$card-bg-color;
+  border-radius: v.$border-radius;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    @include m.pseudo-element();
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+  }
+
+  &.facebook::before {
+    background-color: hsl(208, 92%, 53%);
+  }
+
+  &.twitter::before {
+    background-color: hsl(203, 89%, 53%);
+  }
+
+  &.instagram::before {
+    background: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  }
+
+  &.youtube::before {
+    background-color: hsl(348, 97%, 39%);
+  }
+
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.4rem;
+
+    &__image {
+      margin-right: 0.6rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      color: v.$text-muted-color;
+    }
+  }
+
+  &__value {
+    font-size: 3.6rem;
+    font-weight: bold;
+  }
+
+  &__metric {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.3rem;
+    color: v.$text-muted-color;
+    margin-bottom: 1.4rem;
+  }
+
+  .variation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__arrow {
+      margin-right: 0.4rem;
+    }
+
+    &__value {
+      font-size: 0.9rem;
+      font-weight: bold;
+
+      &.positive {
+        color: v.$text-positive-color;
+      }
+
+      &.negative {
+        color: v.$text-negative-color;
+      }
     }
   }
 }

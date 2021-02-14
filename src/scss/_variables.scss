@@ -3,6 +3,7 @@ html[data-theme='dark'] {
   --text-muted-color: hsl(228, 34%, 66%);
   --bg-color: hsl(230, 17%, 14%);
   --bg-top-color: hsl(232, 19%, 15%);
+  --card-bg-color: hsl(228, 28%, 20%);
 }
 
 html[data-theme='light'] {
@@ -10,11 +11,16 @@ html[data-theme='light'] {
   --text-muted-color: hsl(228, 12%, 44%);
   --bg-color: hsl(0, 0%, 100%);
   --bg-top-color: hsl(225, 100%, 98%);
+  --card-bg-color: hsl(227, 47%, 96%);
 }
 
 $text-color: var(--text-color);
 $text-muted-color: var(--text-muted-color);
 $bg-color: var(--bg-color);
 $bg-top-color: var(--bg-top-color);
+$card-bg-color: var(--card-bg-color);
+$text-positive-color: hsl(163, 72%, 41%);
+$text-negative-color: hsl(356, 69%, 56%);
 
 $transition-duration: 200ms;
+$border-radius: 0.4rem;

@@ -1,8 +1,9 @@
 mixin accountCard(provider, title, value, variation, isPositive)
-  article.account-card
-    img.account-card__image(src="./img/icon-" + provider + ".svg" alt=provider)
+  article.account-card(class=provider)
+    .user
+      img.user__image(src="./img/icon-" + provider + ".svg" alt=provider)
 
-    h2.account-card__title= title
+      h2.user__title= title
 
     p.account-card__value= value
 
@@ -18,4 +19,4 @@ mixin accountCard(provider, title, value, variation, isPositive)
       else
         img.variation__arrow(src="./img/icon-down.svg" alt="Negative variation")
 
-      p.variation__value #{variation} Today
+      p.variation__value(class=isPositive ? "positive" : "negative") #{variation} Today
