@@ -1,14 +1,20 @@
 html[data-theme='dark'] {
   --text-color: hsl(0, 0%, 100%);
+  --text-muted-color: hsl(228, 34%, 66%);
   --bg-color: hsl(230, 17%, 14%);
+  --bg-top-color: hsl(232, 19%, 15%);
 }
 
 html[data-theme='light'] {
   --text-color: hsl(230, 17%, 14%);
+  --text-muted-color: hsl(228, 12%, 44%);
   --bg-color: hsl(0, 0%, 100%);
+  --bg-top-color: hsl(225, 100%, 98%);
 }
 
 $text-color: var(--text-color);
+$text-muted-color: var(--text-muted-color);
 $bg-color: var(--bg-color);
+$bg-top-color: var(--bg-top-color);
 
 $transition-duration: 200ms;

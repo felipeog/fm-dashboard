@@ -1,15 +1,21 @@
 const htmlElement = document.querySelector('html')
-const themeToggle = document.querySelector('.toggle')
+const themeToggleWrapper = document.querySelector('.toggle')
+const themeToggleButton = themeToggleWrapper.querySelector('.toggle__button')
 
 const toggleTheme = () => {
   const currentTheme = htmlElement.getAttribute('data-theme')
-  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark'
 
-  htmlElement.setAttribute('data-theme', nextTheme)
+  if (currentTheme === 'dark') {
+    htmlElement.setAttribute('data-theme', 'light')
+    themeToggleButton.classList.remove('active')
+  } else {
+    htmlElement.setAttribute('data-theme', 'dark')
+    themeToggleButton.classList.add('active')
+  }
 }
 
 const init = () => {
-  themeToggle.addEventListener('click', toggleTheme)
+  themeToggleWrapper.addEventListener('click', toggleTheme)
 }
 
 window.addEventListener('load', init)

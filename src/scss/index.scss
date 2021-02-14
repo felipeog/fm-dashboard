@@ -1,13 +1,121 @@
 @use './variables' as v;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-size: 14px;
   font-family: Inter, sans-serif;
 }
 
 body {
+  position: relative;
   background-color: v.$bg-color;
   color: v.$text-color;
-  transition: background-color v.$transition-duration,
-    color v.$transition-duration;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 14rem;
+  background-color: v.$bg-top-color;
+  z-index: -1;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+// header
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &__h1 {
+    margin-bottom: 0.4rem;
+  }
+
+  &__h2 {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: v.$text-muted-color;
+  }
+}
+
+// toggle
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__label {
+    margin-right: 1rem;
+    font-weight: bold;
+    color: v.$text-muted-color;
+    transition: v.$transition-duration;
+  }
+
+  &__button {
+    position: relative;
+    cursor: pointer;
+    border: none;
+    width: 3.4rem;
+    height: 1.8rem;
+    border-radius: 2rem;
+    background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    transition: v.$transition-duration;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0.2rem;
+      left: 0.2rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background-color: v.$bg-top-color;
+      transition: v.$transition-duration;
+    }
+
+    &.active::before {
+      left: 1.8rem;
+    }
+  }
+
+  &:hover {
+    .toggle__label {
+      color: v.$text-color;
+    }
+
+    .toggle__button {
+      filter: brightness(120%);
+    }
+  }
 }
