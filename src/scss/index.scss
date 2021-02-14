@@ -140,6 +140,12 @@ h3 {
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition: v.$transition-duration;
+
+  &:hover {
+    filter: brightness(120%);
+  }
 
   &::before {
     @include m.pseudo-element();
