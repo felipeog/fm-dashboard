@@ -6,5 +6,8 @@ html {
 }
 
 body {
-  background-color: v.$primary;
+  background-color: v.$bg-color;
+  color: v.$text-color;
+  transition: background-color v.$transition-duration,
+    color v.$transition-duration;
 }

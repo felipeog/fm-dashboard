@@ -1,1 +1,14 @@
-$primary: tomato;
+html[data-theme='dark'] {
+  --text-color: hsl(0, 0%, 100%);
+  --bg-color: hsl(230, 17%, 14%);
+}
+
+html[data-theme='light'] {
+  --text-color: hsl(230, 17%, 14%);
+  --bg-color: hsl(0, 0%, 100%);
+}
+
+$text-color: var(--text-color);
+$bg-color: var(--bg-color);
+
+$transition-duration: 200ms;
