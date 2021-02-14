@@ -1,14 +1,16 @@
 {
   "name": "fm-dashboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend Mentos challenge",
   "main": "index.js",
   "scripts": {
     "start": "parcel './src/index.pug' --open",
     "build": "parcel build './src/index.pug'"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "frontendmentor"
+  ],
+  "author": "https://github.com/felipeog",
   "license": "ISC",
   "dependencies": {
     "parcel-bundler": "^1.12.4"
