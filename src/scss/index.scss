@@ -255,6 +255,7 @@ h3 {
     }
 
     &__metric {
+      text-transform: capitalize;
       font-size: 1rem;
       color: v.$text-muted-color;
     }
