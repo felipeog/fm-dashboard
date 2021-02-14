@@ -1,12 +1,3 @@
-# Front-end Style Guide
-
-## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
 ## Colors
 
 ### Primary
@@ -44,14 +35,3 @@ The designs were created to the following widths:
 - Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
 - Dark Grayish Blue (Text): hsl(228, 12%, 44%)
 - Very Dark Blue (Text): hsl(230, 17%, 14%)
-
-## Typography
-
-### Body Copy
-
-- Font size (Overview Card Headings): 14px
-
-### Font
-
-- Family: [Inter](https://fonts.google.com/specimen/Inter)
-- Weights: 400, 700

@@ -1,0 +1,21 @@
+mixin accountCard(provider, title, value, variation, isPositive)
+  article.account-card
+    img.account-card__image(src="./img/icon-" + provider + ".svg" alt=provider)
+
+    h2.account-card__title= title
+
+    p.account-card__value= value
+
+    case provider
+      when "youtube"
+        p.account-card__metric Subscribers
+      default
+        p.account-card__metric Followers
+
+    .variation
+      if isPositive
+        img.variation__arrow(src="./img/icon-up.svg" alt="Positive variation")
+      else
+        img.variation__arrow(src="./img/icon-down.svg" alt="Negative variation")
+
+      p.variation__value #{variation} Today

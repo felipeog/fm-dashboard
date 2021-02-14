@@ -1,5 +1,10 @@
 @use './variables' as v;
 
+html {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+}
+
 body {
   background-color: v.$primary;
 }
