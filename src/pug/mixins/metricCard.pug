@@ -1,0 +1,17 @@
+mixin metricCard(metric, provider, value, variation, isPositive)
+  article.metric-card
+    .metric-card__header 
+      h2.metric-card__metric= metric
+
+      img.metric-card__image(src="./img/icon-" + provider + ".svg" alt=provider)
+
+    .metric-card__content
+      p.metric-card__value= value
+
+      .variation
+        if isPositive
+          img.variation__arrow(src="./img/icon-up.svg" alt="Positive variation")
+        else
+          img.variation__arrow(src="./img/icon-down.svg" alt="Negative variation")
+
+        p.variation__value #{variation}%
