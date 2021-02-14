@@ -1,3 +1,5 @@
+include ./variation.pug
+
 mixin accountCard(provider, title, value, variation, isPositive)
   article.account-card(class=provider)
     .user
@@ -13,10 +15,4 @@ mixin accountCard(provider, title, value, variation, isPositive)
       default
         p.account-card__metric Followers
 
-    .variation
-      if isPositive
-        img.variation__arrow(src="./img/icon-up.svg" alt="Positive variation")
-      else
-        img.variation__arrow(src="./img/icon-down.svg" alt="Negative variation")
-
-      p.variation__value(class=isPositive ? "positive" : "negative") #{variation} Today
+    +variation(variation, isPositive, " today")
