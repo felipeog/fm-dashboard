@@ -44,16 +44,13 @@ h3 {
 }
 
 .container {
-  max-width: 1110px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
 }
 
 // header
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 4rem;
 
   &__h1 {
@@ -70,15 +67,14 @@ h3 {
 
 // toggle
 .toggle {
+  cursor: pointer;
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   &__label {
-    margin-right: 1rem;
     font-weight: bold;
     color: v.$text-muted-color;
-    transition: v.$transition-duration;
+    transition: color v.$transition-duration;
     text-transform: capitalize;
   }
 
@@ -135,7 +131,7 @@ h3 {
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     gap: 2rem;
   }
 }
@@ -216,7 +212,7 @@ h3 {
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     gap: 2rem;
   }
 
@@ -280,5 +276,31 @@ h3 {
     &.negative {
       color: v.$text-negative-color;
     }
+  }
+}
+
+@media screen and (min-width: 650px) {
+  // header
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // toggle
+  .toggle {
+    &__label {
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 649px) {
+  // toggle
+  .toggle {
+    border-top: 0.1rem solid v.$toggle-border-color;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    justify-content: space-between;
   }
 }

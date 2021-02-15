@@ -5,6 +5,7 @@ html[data-theme='dark'] {
   --bg-top-color: hsl(232, 19%, 15%);
   --card-bg-color: hsl(228, 28%, 20%);
   --card-hover-bg-color: hsl(230, 24%, 25%);
+  --toggle-border-color: rgba(255, 255, 255, 0.2);
 }
 
 html[data-theme='light'] {
@@ -14,6 +15,7 @@ html[data-theme='light'] {
   --bg-top-color: hsl(225, 100%, 98%);
   --card-bg-color: hsl(227, 47%, 96%);
   --card-hover-bg-color: hsl(230, 30%, 85%);
+  --toggle-border-color: rgba(0, 0, 0, 0.2);
 }
 
 $text-color: var(--text-color);
@@ -30,6 +32,7 @@ $toggle-bg-gradient: linear-gradient(
   hsl(210, 78%, 56%),
   hsl(146, 68%, 55%)
 );
+$toggle-border-color: var(--toggle-border-color);
 
 $transition-duration: 200ms;
 $border-radius: 0.4rem;
