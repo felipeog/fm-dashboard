@@ -28,7 +28,7 @@ body::before {
   @include m.pseudo-element();
   top: 0;
   width: 100%;
-  height: 14rem;
+  height: 20rem;
   background-color: v.$bg-top-color;
   z-index: -1;
   border-bottom-left-radius: 0.8rem;
